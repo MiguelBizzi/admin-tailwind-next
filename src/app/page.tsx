@@ -1,8 +1,9 @@
 import { SettingsTabs } from "@/components/SettingsTabs";
-import Image from "next/image";
 import * as Input from "@/components/Input";
 import * as FileInput from "@/components/Form/FileInput";
-import { Mail, UploadCloud, User } from "lucide-react";
+import { Mail } from "lucide-react";
+import { Select } from "@/components/Form/Select";
+import { SelectItem } from "@/components/Form/Select/Selectitem";
 
 export default function Home() {
     return (
@@ -126,7 +127,16 @@ export default function Home() {
                         >
                             Country
                         </label>
-                        <div></div>
+                        <Select placeholder="Select a country...">
+                            <SelectItem value="br" text="Brazil" />
+                            <SelectItem value="us" text="United States" />
+                            <SelectItem value="ca" text="Canada" />
+                            <SelectItem value="fr" text="France" />
+                            <SelectItem value="jp" text="Japan" />
+                            <SelectItem value="de" text="Germany" />
+                            <SelectItem value="au" text="Australia" />
+                            <SelectItem value="gb" text="United Kingdom" />
+                        </Select>
                     </div>
 
                     {/* Timezone */}
@@ -137,7 +147,44 @@ export default function Home() {
                         >
                             Timezone
                         </label>
-                        <div></div>
+                        <Select placeholder="Select a timezone...">
+                            <SelectItem
+                                value="BRT"
+                                text="Brasília Time (BRT)"
+                            />
+                            <SelectItem
+                                value="GMT"
+                                text="Greenwich Mean Time (GMT)"
+                            />
+                            <SelectItem
+                                value="EST"
+                                text="Eastern Standard Time (EST)"
+                            />
+                            <SelectItem
+                                value="CST"
+                                text="Central Standard Time (CST)"
+                            />
+                            <SelectItem
+                                value="MST"
+                                text="Mountain Standard Time (MST)"
+                            />
+                            <SelectItem
+                                value="PST"
+                                text="Pacific Standard Time (PST)"
+                            />
+                            <SelectItem
+                                value="CET"
+                                text="Central European Time (CET)"
+                            />
+                            <SelectItem
+                                value="JST"
+                                text="Japan Standard Time (JST)"
+                            />
+                            <SelectItem
+                                value="AEDT"
+                                text="Australian Eastern Daylight Time (AEDT)"
+                            />
+                        </Select>
                     </div>
 
                     {/* Bio */}
