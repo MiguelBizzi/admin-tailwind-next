@@ -4,14 +4,16 @@ import React, { ChangeEvent, ComponentProps } from "react";
 import { useFileInput } from "./Root";
 import { Trash2, UploadCloud } from "lucide-react";
 import { formatBytes } from "@/utils/format-bytes";
+import { useAutoAnimate } from "@formkit/auto-animate/react";
 
 export type FileListProps = ComponentProps<"input">;
 
 export const FileList = (props: FileListProps) => {
+    const [parent] = useAutoAnimate();
     const { files } = useFileInput();
 
     return (
-        <div className="mt-4 space-y-3">
+        <div className="mt-4 space-y-3" ref={parent}>
             {files.map((file) => {
                 return (
                     <div
