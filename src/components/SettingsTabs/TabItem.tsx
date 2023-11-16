@@ -13,9 +13,9 @@ export const TabItem = ({ value, title, isSelected = false }: TabItemProps) => {
     return (
         <Tabs.Trigger
             value={value}
-            className="relative px-1 pb-4 text-sm font-medium text-zinc-500 hover:text-violet-700 transition-colors duration-150 data-[state=active]:text-violet-700"
+            className="relative group px-1 pb-4 text-sm font-medium text-zinc-500 hover:text-violet-700 transition-colors duration-150 data-[state=active]:text-violet-700"
         >
-            <span>{title}</span>
+            <span className="group-focus:outline-none">{title}</span>
 
             {isSelected && (
                 <motion.div
